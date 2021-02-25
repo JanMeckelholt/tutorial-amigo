@@ -14,8 +14,8 @@ public class StudentConfig {
     @Bean
     CommandLineRunner commandLineRunner(StudentRepository repository){
         return args -> {
-                  Student jan = new Student("Jan", 40, LocalDate.parse("10.02.1981", DateTimeFormatter.ofPattern("dd.MM.yyyy")), "bohlok@gmx.de");
-                  Student peter = new Student("Peter", 20, LocalDate.parse("10.01.2001", DateTimeFormatter.ofPattern("dd.MM.yyyy")), "Peter@gmx.de");
+                  Student jan = new Student("Jan", LocalDate.parse("10.02.1981", DateTimeFormatter.ofPattern("dd.MM.yyyy")), "bohlok@gmx.de");
+                  Student peter = new Student("Peter", LocalDate.parse("10.01.2004", DateTimeFormatter.ofPattern("dd.MM.yyyy")), "Peter@gmx.de");
             repository.saveAll(
                 List.of(jan, peter)
             );
